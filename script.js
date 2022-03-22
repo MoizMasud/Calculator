@@ -25,8 +25,8 @@ class Calulator { // x + y, NOTE IN THIS CODE previousOperand is x and currentOp
     chooseOperation(opeartion) { // happens when a user clicks on an operation
         if(this.currentOperand === '') return; // we want to make sure there a number there to perform operation on
         if(this.previousOperand !== '') {
-            // if we already have a previous value, do that computation before adding another operation
-            // if the user does 55 + 55 + , we want to excute the first 55 +55 
+            // if we already have a previous computation, do that computation before adding another operation
+            // so if the user does 55 + 55 + , we want to excute the first 55 +55, show the user 105 +
             this.compute(); 
         }
         this.opeartion = opeartion;
