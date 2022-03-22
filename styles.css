@@ -1,0 +1,59 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right,#00a2f3, #000000 )
+
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;  /* means it'll fill 100% of the screen all the time */
+    grid-template-columns: repeat(4, 100px);  /* means have 4 coloumns, 100px wide */
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px); /* means at min be 120, and max is as large as it needs to be to fit content */
+   
+}
+
+.calculator-grid button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+}
+
+.calculator-grid button:hover {
+    background-color: rgba(255, 255, 255, .90);
+}
+.big-button {
+    grid-column: span 2;  /* means make grid column span 2 columns */
+}
+
+.output {
+    grid-column: 1 / -1; /* means go from column 1 to last one(-1) so it stretches across whole calculator  */
+    background-color: rgba(0,0,0, .75);
+    display: flex; /* for elements inside the output */
+    align-items: flex-end; /* right side of container */
+    justify-content: space-around;/* puts as much space between our elements as possible */
+    flex-direction: column; /* makes elements line up vertically instead of horizontaly */
+    padding: 10px;
+    word-wrap: break-word; /* wrap if elements get too long */
+    word-break: break-all
+}
+
+.output .first-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.output .second-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 2.5rem;
+}
